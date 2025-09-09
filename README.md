@@ -2,11 +2,14 @@
 Assignment #1: Docker Containers
 
 ## Overview
-This project demonstrates a simple multi-container stack using Docker and Docker Compose. It consists of:  
-- A **PostgreSQL database** container, initialized with a seeded table `trips`.  
-- A **Python application** container that connects to the database, runs queries, computes basic statistics, outputs results as JSON to a file and prints them to the console.
+  
+What the Stack Does
 
-This setup introduces fundamentals of containerized multi-service apps including service networking, environment variables, health checks, and reproducible workflows.
+This project builds and runs a simple multi-container stack using Docker Compose, featuring:
+- A **PostgreSQL service** container initialized with a seeded table of trip data.
+- A **Python application** container that connects to the database, queries data, computes basic statistics, and outputs results as a JSON file and console printout.
+
+This setup introduces essential Docker and Docker Compose concepts such as service networking, environment variable configuration, health checks, and multi-container orchestration.
 
 ## Prerequisites
 - Docker Desktop installed and running  
@@ -97,6 +100,7 @@ After running the stack, you will find the generated file at: out/summary.json
 - **DB not ready:** The app retries connecting multiple times; ensure the database container is healthy.  
 - **Port conflicts:** Verify port 5432 is free or change PostgreSQL port in the Compose file.  
 - **Permission issues:** Ensure the `out/` directory has write permissions for the app container.
+- **Docker daemon not running:** Make sure Docker Desktop is running and has enough allocated resources.
 
 ## Cleaning Up
 
